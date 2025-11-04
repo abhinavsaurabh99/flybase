@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.gradleup.shadow' version '8.3.1'
+}
+
+group = 'in.abhinavsaurabh'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '21'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'info.picocli:picocli:4.7.5'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.2'
+}
+
+application {
+    mainClass = 'in.abhinavsaurabh.flybase.Main'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'in.abhinavsaurabh.flybase.Main'
+        )
+    }
+}
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}

@@ -1,0 +1,21 @@
+schema: my_db
+tables:
+  - name: user
+    columns:
+      - name: id
+        type: BIGINT
+        primaryKey: true
+      - name: username
+        type: VARCHAR(50)
+        unique: true
+      - name: created_at
+        type: TIMESTAMP
+  - name: order
+    columns:
+      - name: order_id
+        type: BIGINT
+        primaryKey: true
+      - name: user_id
+        type: BIGINT
+        foreignKey:
+          references: user(id)
